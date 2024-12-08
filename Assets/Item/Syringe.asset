@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb123ec5d270024d988035c61af5f10, type: 3}
+  m_Name: Syringe
+  m_EditorClassIdentifier: 
+  m_ItemType: 1
+  m_ItmeName: "\uC2A4\uD14C\uB85C\uC774\uB4DC"
+  m_ItemInfo: "\uBE44 \uC804\uD22C\uC2DC \uD68C\uBCF5\uB7C9\uC774 \uCD5C\uB300\uCCB4\uB825\uC758
+    5% \uC99D\uAC00\uD55C\uB2E4."
+  m_ItemImg: {fileID: 21300000, guid: 6ee6cc847bcb9c94f973c060741ca638, type: 3}
+  m_ItemPrefab: {fileID: 140429271250966061, guid: 090e9b2ef4629c749b75f17bfa7401a3,
+    type: 3}
+  m_Add_Hp: 0
+  m_Add_Defence: 0
+  m_Add_Speed: 0
+  m_Add_SprintSpeed: 0
+  m_Add_CriticalProbability: 0
+  m_Add_CriticalDamage: 0
+  m_Add_RecoveryRate: 0.05

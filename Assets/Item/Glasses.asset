@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: deb123ec5d270024d988035c61af5f10, type: 3}
+  m_Name: Glasses
+  m_EditorClassIdentifier: 
+  m_ItemType: 1
+  m_ItmeName: "\uC774\uC218\uAE38\uC758 \uC120\uAE00\uB77C\uC2A4"
+  m_ItemInfo: "\uC774\uC218\uAE38\uC758 \uB208\uC73C\uB85C \uCE58\uBA85\uD0C0\uD655\uB960\uC744
+    10% \uC99D\uAC00\uC2DC\uD0A8\uB2E4."
+  m_ItemImg: {fileID: 21300000, guid: 9312aab088cb20044b9aff27d31cd1d4, type: 3}
+  m_ItemPrefab: {fileID: 6166006828218470778, guid: 23a1d198b0f10c94b8542d44735cc7ad,
+    type: 3}
+  m_Add_Hp: 0
+  m_Add_Defence: 0
+  m_Add_Speed: 0
+  m_Add_SprintSpeed: 0
+  m_Add_CriticalProbability: 0.1
+  m_Add_CriticalDamage: 0

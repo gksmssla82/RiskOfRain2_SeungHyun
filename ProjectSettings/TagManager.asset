@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Monster
+  - Bullet
+  - Effect_Colider
+  - Monster_Hitbox
+  - Respawn_Point
+  - Player_Hitbox
+  - ItemBox
+  - Item
+  - Object
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Camera
+  - Water
+  - UI
+  - Grounds
+  - Player
+  - Monster
+  - Bullet
+  - Effect_Colider
+  - Monster_HitBox
+  - Respawn_Point
+  - Item_Box
+  - Item
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
