@@ -10,11 +10,12 @@ public class FireBall : Bullet
 
     protected void Start()
     {
-        AudioManager.m_Instnace.Random_SoundPlay(gameObject, 44, 3);
+        AudioManager.Instance.Random_SoundPlay(gameObject, 44, 3);
     }
 
     protected override void Update()
     {
+        TimeOut_BulletDestroy();
         base.Update();
     }
 
@@ -22,7 +23,7 @@ public class FireBall : Bullet
     {
         if (other.CompareTag("Player_Hitbox"))
         {
-            AudioManager.m_Instnace.Random_SoundPlay(gameObject,55, 3);
+            AudioManager.Instance.Random_SoundPlay(gameObject,55, 3);
             m_Player.Take_Damage(m_Damage);
             Instantiate(m_VfxExplosion, transform.position, Quaternion.identity);
             Destroy_Bullet();

@@ -30,18 +30,12 @@ public class RespawnPoint : MonoBehaviour
         {
             case 0:
                 Instantiate(m_Bettle, this.transform.position, Quaternion.identity);
-                //GameObject EnemyBettle = PoolManager.m_Instance.Activate_Object(1);
-                //PoolManager.m_Instance.Set_ObjPosition(EnemyBettle, this.transform);
                 break;
             case 1:
                 Instantiate(m_Rumanian, this.transform.position, Quaternion.identity);
-                //GameObject EnemyLumanian = PoolManager.m_Instance.Activate_Object(2);
-                //PoolManager.m_Instance.Set_ObjPosition(EnemyLumanian, this.transform);
                 break;
             case 2:
                 Instantiate(m_Golem, this.transform.position, Quaternion.identity);
-                //GameObject EnemyGolem = PoolManager.m_Instance.Activate_Object(3);
-                //PoolManager.m_Instance.Set_ObjPosition(EnemyGolem, this.transform);
                 break;
         }
     }

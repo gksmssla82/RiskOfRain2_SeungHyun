@@ -67,7 +67,7 @@ public class Monster_Golem: MonsterBase
     #region SPAWN
     private void Enter_Spawn()
     {
-        AudioManager.m_Instnace.Random_SoundPlay(gameObject,83, 3);
+        AudioManager.Instance.Random_SoundPlay(gameObject,83, 3);
         Set_AnimLayerWeight(1, 0);
         m_ToonMaterial.SetColor("_Emissive_Color", new Color(0f,0f,0f));
         StartCoroutine(Corutine_LerpShader(0f, 1f, 6f));
@@ -90,7 +90,7 @@ public class Monster_Golem: MonsterBase
         
         Set_AnimLayerWeight(1, 1);
         m_Agent.speed = 0f;
-        AudioManager.m_Instnace.Random_SoundPlay(gameObject,77, 4);
+        AudioManager.Instance.Random_SoundPlay(gameObject,77, 4);
     }
 
     private void Update_Idle()
@@ -146,7 +146,7 @@ public class Monster_Golem: MonsterBase
 
     private void Enter_Attack()
     {
-        AudioManager.m_Instnace.Random_SoundPlay(gameObject,71, 2);
+        AudioManager.Instance.Random_SoundPlay(gameObject,71, 2);
     }
 
     private void Update_Attack()
@@ -169,7 +169,7 @@ public class Monster_Golem: MonsterBase
         m_Agent.velocity = Vector3.zero;
         m_Agent.isStopped = true;
         m_Anim.SetBool("Sturn", true);
-        AudioManager.m_Instnace.Random_SoundOnShot(gameObject, 11, 3);
+        AudioManager.Instance.Random_SoundOnShot(gameObject, 11, 3);
         m_SturnVfx.Play();
     }
 

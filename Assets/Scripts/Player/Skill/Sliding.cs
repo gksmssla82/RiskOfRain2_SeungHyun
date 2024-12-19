@@ -34,7 +34,7 @@ public class Sliding : Skill
         m_IsUsing = true;
         m_LastUseTime = Time.time;
         m_Player.m_Anim.SetTrigger(_SkillName);
-        AudioManager.m_Instnace.Random_SoundPlay(m_Player.gameObject, 14, 3);
+        AudioManager.Instance.Random_SoundPlay(m_Player.gameObject, 14, 3);
         Vector3 SlideDirection = m_Player.transform.forward;
         float StartTime = Time.time;
         float InitialSlideSpeed = m_SlideSpeed;

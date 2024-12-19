@@ -15,13 +15,14 @@ public class Comando_M2Bullet : Bullet
 
     protected override void Update()
     {
+
+        TimeOut_BulletDeActive("Bullet_M2");
+
         m_Timer += Time.deltaTime;
 
         if (m_Timer >= m_VfxMoveTime)
         {
-
-            GameObject moveVfx = PoolManager.m_Instance.Activate_Object(0);
-            PoolManager.m_Instance.Set_ObjPosition(moveVfx, this.transform);
+            PoolManager.Instance.ActivateParticle("Vfx_M2BulletMove", transform.position, Quaternion.identity);
             m_Timer = 0;
         }
         base.Update();
@@ -54,10 +55,10 @@ public class Comando_M2Bullet : Bullet
 
                 m_PassCount++;
 
-                // 5번통과시 총알삭제
+                // 6번이상 통과시 총알삭제
                 if (m_PassCount >= 6)
                 {
-                    Destroy_Bullet();
+                    PoolManager.Instance.DeactivateObject("Bullet_M2", this.gameObject);
                 }
                 else
                 {

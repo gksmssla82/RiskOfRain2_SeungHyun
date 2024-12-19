@@ -9,8 +9,8 @@ public class Comando_M1Bullet : Bullet
 
     protected override void Update()
     {
+        TimeOut_BulletDeActive("Bullet_Normal");
         base.Update();
-        //Debug.Log("총알 최소 데미지 :" + m_MinDamage);
     }
 
     protected override void OnTriggerEnter(Collider other)
@@ -35,7 +35,7 @@ public class Comando_M1Bullet : Bullet
 
                 // 총알 삭제
                 //Destroy_Bullet();
-                ActiveFalse_Bullet();
+                DeActivate_Bullet("Bullet_Normal");
             }
         }
 
@@ -46,7 +46,7 @@ public class Comando_M1Bullet : Bullet
 
             // 총알 삭제
             //Destroy_Bullet();
-            ActiveFalse_Bullet();
+            DeActivate_Bullet("Bullet_Normal");
         }
     }
 

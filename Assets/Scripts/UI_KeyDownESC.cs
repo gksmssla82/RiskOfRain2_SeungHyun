@@ -19,7 +19,7 @@ public class UI_KeyDownESC : MonoBehaviour
         {
             if (gameObject.activeSelf == true)
             {
-                AudioManager.m_Instnace.Play(gameObject, "Button_Exit");
+                AudioManager.Instance.Play(gameObject, "Button_Exit");
                 //PauseManager.m_Instance.PauseGame();
                 gameObject.SetActive(false);
             }
@@ -48,7 +48,7 @@ public class UI_KeyDownESC : MonoBehaviour
 
     public void OnClick_Select_MainMenu()
     {
-        BgmManager.m_Instnace.Stop();
+        BgmManager.Instance.Stop();
         SceneManager.LoadScene("MainMenu");
         gameObject.SetActive(false);
     }
@@ -57,7 +57,7 @@ public class UI_KeyDownESC : MonoBehaviour
     {
         gameObject.SetActive(false);
 #if UNITY_EDITOR
-        AudioManager.m_Instnace.Play(gameObject, "Button_Click");
+        AudioManager.Instance.Play(gameObject, "Button_Click");
         UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();

@@ -69,7 +69,7 @@ public class Monster_Lemurian : MonsterBase
     {
        
         Set_AnimLayerWeight(1, 0);
-        AudioManager.m_Instnace.Random_SoundPlay(gameObject,58, 3);
+        AudioManager.Instance.Random_SoundPlay(gameObject,58, 3);
         StartCoroutine(Corutine_Spawn());
     }
 
@@ -85,7 +85,7 @@ public class Monster_Lemurian : MonsterBase
     #region IDLE
     private void Enter_Idle()
     {
-        AudioManager.m_Instnace.Random_SoundPlay(gameObject,50, 5);
+        AudioManager.Instance.Random_SoundPlay(gameObject,50, 5);
         Set_AnimLayerWeight(1, 1);
         m_Agent.speed = 0f;
     }
@@ -143,7 +143,7 @@ public class Monster_Lemurian : MonsterBase
 
     private void Enter_Attack()
     {
-        AudioManager.m_Instnace.Random_SoundPlay(gameObject,37, 3);
+        AudioManager.Instance.Random_SoundPlay(gameObject,37, 3);
 
     }
 
@@ -174,7 +174,7 @@ public class Monster_Lemurian : MonsterBase
         m_Agent.isStopped = true;
         m_Anim.SetBool("Sturn", true);
         m_SturnVfx.Play();
-        AudioManager.m_Instnace.Random_SoundOnShot(gameObject,11, 3);
+        AudioManager.Instance.Random_SoundOnShot(gameObject,11, 3);
     }
 
     private void Update_Sturn()
@@ -261,14 +261,14 @@ public class Monster_Lemurian : MonsterBase
         Vector3 Direction = (m_Player.transform.position - transform.position).normalized;
         Direction.y -= 0.1f;
         Instantiate(m_FireBall, m_FirePoint.position, Quaternion.LookRotation(Direction, Vector3.up));
-        AudioManager.m_Instnace.Random_SoundOnShot(gameObject, 47, 3);
+        AudioManager.Instance.Random_SoundOnShot(gameObject, 47, 3);
         m_ChargeFire.Stop();
     }
 
     public void Anim_ChageFireBall()
     {
         m_ChargeFire.Play();
-        AudioManager.m_Instnace.Random_SoundOnShot(gameObject,41, 3);
+        AudioManager.Instance.Random_SoundOnShot(gameObject,41, 3);
     }
 
     public void Anim_SpawnEffect()
@@ -285,7 +285,7 @@ public class Monster_Lemurian : MonsterBase
         m_isFireBall = true;
 
         m_Anim.SetTrigger("Fire");
-        AudioManager.m_Instnace.Random_SoundPlay(gameObject,47, 3);
+        AudioManager.Instance.Random_SoundPlay(gameObject,47, 3);
         yield return new WaitForSeconds(m_FireBallTime);
 
         m_isFireBall = false;

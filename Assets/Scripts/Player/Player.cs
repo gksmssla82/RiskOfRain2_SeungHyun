@@ -258,7 +258,7 @@ public class Player : MonoBehaviour, IStatus, IDamage, ILevel
     {
         //·¹º§¾÷ ÀÌÆåÆ® Àç»ý
         m_LevelUpEffect.Play();
-        AudioManager.m_Instnace.PlayOneShot(gameObject, "Player_LevelUp");
+        AudioManager.Instance.PlayOneShot(gameObject, "Player_LevelUp");
         // Ã¼·Â/°æÇèÄ¡ »ó½ÂÆø
         m_MaxHp += 30f;
         m_MaxExp += 50f;
@@ -278,7 +278,7 @@ public class Player : MonoBehaviour, IStatus, IDamage, ILevel
     {
        
         m_CurrentExp += _Exp;
-        AudioManager.m_Instnace.Random_SoundOnShot(gameObject, 105, 3);
+        AudioManager.Instance.Random_SoundOnShot(gameObject, 105, 3);
         Update_ExpUI();
 
         if (m_CurrentExp >= m_MaxExp)
@@ -317,7 +317,7 @@ public class Player : MonoBehaviour, IStatus, IDamage, ILevel
     {
         float floatMoney = m_DisplayMoney;
 
-        AudioManager.m_Instnace.Random_SoundOnShot(gameObject, 105, 3);
+        AudioManager.Instance.Random_SoundOnShot(gameObject, 105, 3);
 
         while(m_DisplayMoney != _TagetMoney)
         {

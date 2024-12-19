@@ -26,7 +26,7 @@ public class Sound
         m_Source = _Source;
         m_Source.clip = m_Clip;
         m_Source.loop = m_Loop;
-        m_Source.volume = AudioManager.m_Instnace.m_MasterVolume * m_Volum;
+        m_Source.volume = AudioManager.Instance.m_MasterVolume * m_Volum;
 
         m_Source.spatialBlend = m_isUI ? 0f : 1f; // 2D/3D 사운드 설정
 
@@ -92,31 +92,14 @@ public class Sound
 #endregion
 
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : Singleton<AudioManager>
 {
     public Sound[] m_Sounds;
-    public static AudioManager m_Instnace;
     public float m_MasterVolume = 1.0f;
     private Dictionary<string, Sound> m_SoundDictionary;
     private float m_Volume = 1;
 
-    private void Awake()
-    {
-        // 싱글톤 설정
-        if (m_Instnace == null)
-        {
-            m_Instnace = this;
-            DontDestroyOnLoad(gameObject); // 씬 전환 시에도 오브젝트 유지
-        }
-        else
-        {
-            Destroy(gameObject); // 중복 생성 방지
-            return;
-        }
-
-       
-
-    }
+ 
     private void Start()
     {
         m_SoundDictionary = new Dictionary<string, Sound>();

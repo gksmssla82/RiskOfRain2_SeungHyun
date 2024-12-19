@@ -3,27 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CursorManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class CursorManager : Singleton<CursorManager>, IPointerEnterHandler, IPointerExitHandler
 {
-    public static CursorManager m_Instance;
     [SerializeField] private Texture2D m_DefaultCursor;
     [SerializeField] private Texture2D m_HoverCursor;
 
-
-    private void Awake()
-    {
-        // 싱글톤 설정
-        if (m_Instance == null)
-        {
-            m_Instance = this;
-            DontDestroyOnLoad(gameObject); // 씬 전환 시에도 오브젝트 유지
-        }
-        else
-        {
-            Destroy(gameObject); // 중복 생성 방지
-            return;
-        }
-    }
 
     private void Start()
     {
@@ -49,10 +33,8 @@ public class CursorManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("Pointer Name = " + eventData.pointerEnter.name);
         if (eventData.pointerEnter.name == "OutLine")
-        {
-            Debug.Log("아웃라인");
+        { 
             Set_Hover_Cursor();
         }
     }

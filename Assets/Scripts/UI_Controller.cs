@@ -21,13 +21,13 @@ public class UI_Controller : MonoBehaviour
 
         if (m_UI_KeyDownESC.activeSelf == true || m_SettingMenu.activeSelf == true)
         {
-            PauseManager.m_Instance.PauseGame();
-            CursorManager.m_Instance.Show_Cursor(true);
+            PauseManager.Instance.PauseGame();
+            CursorManager.Instance.Show_Cursor(true);
         }
         else
         {
-            PauseManager.m_Instance.ResumeGame();
-            CursorManager.m_Instance.Show_Cursor(false);
+            PauseManager.Instance.ResumeGame();
+            CursorManager.Instance.Show_Cursor(false);
         }
     }
 

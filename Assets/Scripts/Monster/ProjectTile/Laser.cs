@@ -57,7 +57,7 @@ public class Laser : MonoBehaviour
         m_isFire = true;
         // 경고 파티클 재생
         m_WaringParticle.Play();
-        AudioManager.m_Instnace.PlayOneShot(gameObject,"Golem_LazerCharge");
+        AudioManager.Instance.PlayOneShot(gameObject,"Golem_LazerCharge");
 
 
         // 레이저 끝점 위치
@@ -109,7 +109,7 @@ public class Laser : MonoBehaviour
         
         float RealTimer = 0f;
         bool IsDameged = false;
-        AudioManager.m_Instnace.PlayOneShot(gameObject,"Golem_LazerFire");
+        AudioManager.Instance.PlayOneShot(gameObject,"Golem_LazerFire");
 
 
 

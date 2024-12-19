@@ -2,31 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BgmManager : MonoBehaviour
+public class BgmManager : Singleton<BgmManager>
 {
     public AudioClip[] m_Clips; // 배경음악들
     private AudioSource m_Source;
-    public static BgmManager m_Instnace;
-
     // 반복문 내에서 new가 자주 호출되면 따로 선언해서 쓰는편이 성능성 유리
     private WaitForSeconds m_WaitTime = new WaitForSeconds(0.01f);
 
-    private void Awake()
+    protected override void  Awake()
     {
         m_Source = GetComponent<AudioSource>();
-        
-        // 싱글톤 설정
-        if (m_Instnace == null)
-        {
-            m_Instnace = this;
-            DontDestroyOnLoad(gameObject); // 씬 전환 시에도 오브젝트 유지
-        }
-        else
-        {
-            Destroy(gameObject); // 중복 생성 방지
-            return;
-        }
-
     }
 
     void Start()

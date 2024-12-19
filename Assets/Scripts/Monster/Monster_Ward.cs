@@ -101,7 +101,7 @@ public class Monster_Ward : MonsterBase
         
         m_Spawned = true;
 
-        AudioManager.m_Instnace.Play(gameObject, "BettleWard_Idle");
+        AudioManager.Instance.Play(gameObject, "BettleWard_Idle");
     }
 
     private IEnumerator Corutine_Explosion()
@@ -109,11 +109,11 @@ public class Monster_Ward : MonsterBase
         m_HitBoxColiider.SetActive(false);
         m_isEmission = true;
         m_isChasing = false;
-        AudioManager.m_Instnace.Play(gameObject, "BettleWard_ExplosionStart");
+        AudioManager.Instance.Play(gameObject, "BettleWard_ExplosionStart");
         yield return new WaitForSeconds(2f);
 
         Debug.Log("Ward Æø¹ß");
-        AudioManager.m_Instnace.Play_newObject(gameObject, "BettleWard_Explosion");
+        AudioManager.Instance.Play_newObject(gameObject, "BettleWard_Explosion");
         Instantiate(m_ExplosionVfx, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

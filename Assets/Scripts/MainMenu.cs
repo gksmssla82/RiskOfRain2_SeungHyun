@@ -14,21 +14,21 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        BgmManager.m_Instnace.Play(0);
-        CursorManager.m_Instance.Show_Cursor(true);
-        if (Dont_Destroy.m_Instance.m_SettingMenu != null)
+        BgmManager.Instance.Play(0);
+        CursorManager.Instance.Show_Cursor(true);
+        if (UIManager.Instance.m_SettingMenu != null)
         {
-            m_SettingMenu = Dont_Destroy.m_Instance.m_SettingMenu;
+            m_SettingMenu = UIManager.Instance.m_SettingMenu;
         }
 
-        if (Dont_Destroy.m_Instance.m_KeyDownExcUI != null)
+        if (UIManager.Instance.m_KeyDownExcUI != null)
         {
-            m_KeyDownEscUI = Dont_Destroy.m_Instance.m_KeyDownExcUI;
+            m_KeyDownEscUI = UIManager.Instance.m_KeyDownExcUI;
         }
 
-        if (Dont_Destroy.m_Instance.m_UIController != null)
+        if (UIManager.Instance.m_UIController != null)
         {
-            m_UIController = Dont_Destroy.m_Instance.m_UIController;
+            m_UIController = UIManager.Instance.m_UIController;
         }
 
         m_UIController.SetActive(false);
@@ -41,15 +41,9 @@ public class MainMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //if (m_BlurImg.activeSelf == true)
-            //{
-               
-            //    //m_BlurImg.SetActive(false);
-            //}
-
             if (m_SettingMenu.activeSelf == true)
             {
-                AudioManager.m_Instnace.Play(gameObject, "Button_Exit");
+                AudioManager.Instance.Play(gameObject, "Button_Exit");
                 m_SettingMenu.SetActive(false);
             }
         }
@@ -57,8 +51,8 @@ public class MainMenu : MonoBehaviour
 
     public void OnClick_GameStart()
     {
-        AudioManager.m_Instnace.Play(gameObject,"Button_Click");
-        BgmManager.m_Instnace.Stop();
+        AudioManager.Instance.Play(gameObject,"Button_Click");
+        BgmManager.Instance.Stop();
         m_UIController.SetActive(true);
         SceneManager.LoadScene("Loading");
         
@@ -67,7 +61,7 @@ public class MainMenu : MonoBehaviour
     public void OnClick_Setting()
     {
 
-        AudioManager.m_Instnace.Play(gameObject,"Button_Click");
+        AudioManager.Instance.Play(gameObject,"Button_Click");
       
         //m_BlurImg.SetActive(true);
         m_SettingMenu.SetActive(true);
@@ -76,7 +70,7 @@ public class MainMenu : MonoBehaviour
     public void OnClick_Quit()
     {
 #if UNITY_EDITOR
-        AudioManager.m_Instnace.Play(gameObject,"Button_Click");
+        AudioManager.Instance.Play(gameObject,"Button_Click");
         UnityEditor.EditorApplication.isPlaying = false;
 #else
 

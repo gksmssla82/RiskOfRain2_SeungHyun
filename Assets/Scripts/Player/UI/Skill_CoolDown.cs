@@ -126,7 +126,7 @@ public class Skill_CoolDown : MonoBehaviour
         AnimatorStateInfo StateInfo = m_FinishAnim.GetCurrentAnimatorStateInfo(0);
         yield return new WaitForSeconds(StateInfo.length);
         m_FinishCoolDownImage.SetActive(false);
-        AudioManager.m_Instnace.PlayOneShot(m_Player.gameObject, "CoolDown");
+        AudioManager.Instance.PlayOneShot(m_Player.gameObject, "CoolDown");
     }
 
 }

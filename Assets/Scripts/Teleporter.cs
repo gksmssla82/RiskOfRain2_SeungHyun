@@ -35,7 +35,7 @@ public class Teleporter : MonoBehaviour
         {
             m_Collider.enabled = false;
             m_ActiveMessage.SetActive(false);
-            AudioManager.m_Instnace.Play(gameObject, "Teleporter_BossSpawn");
+            AudioManager.Instance.Play(gameObject, "Teleporter_BossSpawn");
             Instantiate(m_SpawnBossPrepab, m_BossSpawnPoint.position, Quaternion.identity);
         }
     }

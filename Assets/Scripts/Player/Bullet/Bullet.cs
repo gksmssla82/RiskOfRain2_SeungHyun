@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour, IMove
     [SerializeField] protected float Speed = 50f;
     
     [SerializeField] protected float m_DestroyTime = 3;
+    private float m_CurrentDestroyTime;
 
    
     public float m_MoveSpeed { get => Speed; set => Speed = value; }
@@ -20,18 +21,16 @@ public class Bullet : MonoBehaviour, IMove
 
     protected  virtual void Awake()
     {
-   
-      
-
         m_Rigid = GetComponent<Rigidbody>();
         m_Monster = FindAnyObjectByType<MonsterBase>();
         m_Player = FindAnyObjectByType<Player>();
+        m_CurrentDestroyTime = m_DestroyTime;
     }
 
 
     protected virtual void Update()
     {
-        TimeOut_BulletDestroy();
+        //TimeOut_BulletDestroy();
        
 
         Move();
@@ -49,29 +48,32 @@ public class Bullet : MonoBehaviour, IMove
         }
     }
 
-  
+    protected void TimeOut_BulletDeActive(string _name)
+    {
+       
+        m_CurrentDestroyTime -= Time.deltaTime;
+
+        if (m_CurrentDestroyTime <= 0)
+        {
+            DeActivate_Bullet(_name);
+        }
+    }
+
+
+
+
 
     protected void Destroy_Bullet()
     {
         Destroy(gameObject);
     }
 
-    protected void ActiveFalse_Bullet()
+    protected void DeActivate_Bullet(string _name)
     {
-        gameObject.SetActive(false);
+        PoolManager.Instance.DeactivateObject(_name, this.gameObject);
+        m_CurrentDestroyTime = m_DestroyTime;
     }
 
-
-
-    protected void TimeOut_BulletActiveFalse()
-    {
-        m_DestroyTime -= Time.deltaTime;
-
-        if (m_DestroyTime <= 0)
-        {
-            ActiveFalse_Bullet();
-        }
-    }
 
     public float Calculate_BulletDamage(MonsterBase Monster)
     {
@@ -106,7 +108,7 @@ public class Bullet : MonoBehaviour, IMove
         MonsterBase monster = other.GetComponent<MonsterBase>();
         
        
-        Destroy_Bullet();
+        //Destroy_Bullet();
 
     }
 

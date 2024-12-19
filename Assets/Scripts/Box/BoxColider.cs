@@ -20,7 +20,7 @@ public class BoxColider : MonoBehaviour
     public void Box_Open()
     {
         Animator Anim = GetComponentInParent<ItemBox>().m_Anim;
-        AudioManager.m_Instnace.PlayOneShot(m_Player.gameObject, "ItemBox_Open");
+        AudioManager.Instance.PlayOneShot(m_Player.gameObject, "ItemBox_Open");
         m_Open = true;
         Anim.SetTrigger("Open");
         this.gameObject.SetActive(false);

@@ -473,7 +473,7 @@ public class MonsterBase : MonoBehaviour, IMove, IDamage, IStatus
         else
         {
             Debug.Log("크리티컬!");
-            AudioManager.m_Instnace.Random_SoundOnShot(gameObject, 101, 3);
+            AudioManager.Instance.Random_SoundOnShot(gameObject, 101, 3);
             DamagePopUp.m_Instace.CreatePopUp(transform.position + RandomPos, Damage.ToString(), Color.red);
             m_isCritical = false;
         }
@@ -624,17 +624,17 @@ public class MonsterBase : MonoBehaviour, IMove, IDamage, IStatus
     {
         if (gameObject.GetComponent<Monster_Beetle>() != null)
         {
-            AudioManager.m_Instnace.Random_SoundOnShot(gameObject, 90, 3);
+            AudioManager.Instance.Random_SoundOnShot(gameObject, 90, 3);
         }
 
         if (gameObject.GetComponent<Monster_Golem>() != null)
         {
-            AudioManager.m_Instnace.Random_SoundOnShot(gameObject, 93, 3);
+            AudioManager.Instance.Random_SoundOnShot(gameObject, 93, 3);
         }
 
         if (gameObject.GetComponent<Monster_Lemurian>() != null)
         {
-            AudioManager.m_Instnace.Random_SoundOnShot(gameObject, 96, 3);
+            AudioManager.Instance.Random_SoundOnShot(gameObject, 96, 3);
         }
     }
 

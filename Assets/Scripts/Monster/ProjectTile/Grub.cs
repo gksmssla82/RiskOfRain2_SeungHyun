@@ -25,7 +25,7 @@ public class Grub : Bullet
     }
 
     
-    void Update()
+    protected override void Update()
     {
         if (m_isTurn)
         {
@@ -54,7 +54,7 @@ public class Grub : Bullet
         m_Colider.enabled = true;
 
         yield return new WaitForSeconds(0.2f);
-        AudioManager.m_Instnace.Play_newObject(gameObject, "Grub_Explosion");
+        AudioManager.Instance.Play_newObject(gameObject, "Grub_Explosion");
         Destroy_Bullet();
 
     }

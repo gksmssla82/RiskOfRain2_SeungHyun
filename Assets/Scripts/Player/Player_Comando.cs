@@ -156,38 +156,50 @@ public class Player_Comando : Player
     private void NormalShoot_Left()
     {
         Vector3 AimDir = (m_MouseWorldPos - m_LeftGunMuzzle.position).normalized;
-        AudioManager.m_Instnace.Random_SoundPlay(gameObject,2, 3);
+        AudioManager.Instance.Random_SoundPlay(gameObject,2, 3);
         m_NormalLeftBulletFlash.Play();
-        Instantiate(m_NormalBullet, m_LeftGunMuzzle.position, Quaternion.LookRotation(AimDir, Vector3.up));
-      
+        GameObject Bullet = PoolManager.Instance.ActivateObject("Bullet_Normal", m_LeftGunMuzzle.position, Quaternion.LookRotation(AimDir, Vector3.up));
+        Bullet.transform.position = m_LeftGunMuzzle.position;
+        Bullet.transform.rotation = Quaternion.LookRotation(AimDir, Vector3.up);
         m_NormalBulletFire_Left = false;
     }
 
     private void NormalShoot_Right()
     {
         Vector3 AimDir = (m_MouseWorldPos - m_RightGunMuzzle.position).normalized;
-        AudioManager.m_Instnace.Random_SoundPlay(gameObject,2, 3);
+        AudioManager.Instance.Random_SoundPlay(gameObject,2, 3);
         m_NormalRightBulletFlash.Play();
-        Instantiate(m_NormalBullet, m_RightGunMuzzle.position, Quaternion.LookRotation(AimDir, Vector3.up));
-      
+
+        GameObject Bullet = PoolManager.Instance.ActivateObject("Bullet_Normal", m_RightGunMuzzle.position, Quaternion.LookRotation(AimDir, Vector3.up));
+        Bullet.transform.position = m_RightGunMuzzle.position;
+        Bullet.transform.rotation = Quaternion.LookRotation(AimDir, Vector3.up);
+
         m_NormalBulletFire_Right = false;
     }
 
     private void RShoot_Right()
     {
         Vector3 AimDir = (m_MouseWorldPos - m_RightGunMuzzle.position).normalized;
-        AudioManager.m_Instnace.Random_SoundPlay(gameObject,8, 3);
+        AudioManager.Instance.Random_SoundPlay(gameObject,8, 3);
         m_NormalRightBulletFlash.Play();
-        Instantiate(m_RBullet, m_RightGunMuzzle.position, Quaternion.LookRotation(AimDir, Vector3.up));
+
+        GameObject Bullet = PoolManager.Instance.ActivateObject("Bullet_R", m_RightGunMuzzle.position, Quaternion.LookRotation(AimDir, Vector3.up));
+        Bullet.transform.position = m_RightGunMuzzle.position;
+        Bullet.transform.rotation = Quaternion.LookRotation(AimDir, Vector3.up);
+
         m_RBulletFire_Right = false;
     }
 
     private void M2Shoot_Center()
     {
         Vector3 AimDir = (m_MouseWorldPos - m_CenterGunMuzzle.position).normalized;
-        AudioManager.m_Instnace.Random_SoundPlay(gameObject,5, 3);
+        AudioManager.Instance.Random_SoundPlay(gameObject,5, 3);
         m_M2CenterBulletFlash.Play();
-        Instantiate(m_M2Bullet, m_CenterGunMuzzle.position, Quaternion.LookRotation(AimDir, Vector3.up));
+     
+        GameObject Bullet = PoolManager.Instance.ActivateObject("Bullet_M2", m_CenterGunMuzzle.position, Quaternion.LookRotation(AimDir, Vector3.up));
+        Bullet.transform.position = m_CenterGunMuzzle.position;
+        Bullet.transform.rotation = Quaternion.LookRotation(AimDir, Vector3.up);
+
         m_M2BulletFire = false;
     }
 
@@ -198,7 +210,7 @@ public class Player_Comando : Player
         // 크로스헤어
         Change_CrossHair(false, true);
         // 마우스 민감도
-        m_Controller.Set_Sensitivity(SensitivityManager.m_Instance.m_ShootingSensitivity);
+        m_Controller.Set_Sensitivity(SensitivityManager.Instance.m_ShootingSensitivity);
         // 카메라 키보드 입력방향으로 향하는거 막기
         m_Controller.Set_RotateOnMove(false);
 
@@ -226,7 +238,7 @@ public class Player_Comando : Player
     private void Not_Shoot()
     {
         Change_CrossHair(true, false);
-        m_Controller.Set_Sensitivity(SensitivityManager.m_Instance.m_CameraSensitivity);
+        m_Controller.Set_Sensitivity(SensitivityManager.Instance.m_CameraSensitivity);
         m_Controller.Set_RotateOnMove(true);
         ShootMove();
 
@@ -318,15 +330,15 @@ public class Player_Comando : Player
 
     public void AnimWalk_Sound()
     {
-        AudioManager.m_Instnace.Random_SoundOnShot(gameObject,17, 5);
+        AudioManager.Instance.Random_SoundOnShot(gameObject,17, 5);
     }
     public void AnimJump_Sound()
     {
-        AudioManager.m_Instnace.Random_SoundOnShot(gameObject, 22, 3);
+        AudioManager.Instance.Random_SoundOnShot(gameObject, 22, 3);
     }
     public void AnimLand_Sound()
     {
-        AudioManager.m_Instnace.Random_SoundOnShot(gameObject, 25, 3);
+        AudioManager.Instance.Random_SoundOnShot(gameObject, 25, 3);
     }
     #endregion
 }

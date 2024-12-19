@@ -53,7 +53,7 @@ public class Monster_Beetle : MonsterBase
     {
        
         Set_AnimLayerWeight(1, 0);
-        AudioManager.m_Instnace.Play(gameObject, "Bettle_Spawn");
+        AudioManager.Instance.Play(gameObject, "Bettle_Spawn");
         StartCoroutine(Corutine_Spawn());
     }
 
@@ -69,7 +69,7 @@ public class Monster_Beetle : MonsterBase
     #region IDLE
     private void Enter_Idle()
     {
-        AudioManager.m_Instnace.Random_SoundPlay(gameObject,29,3);
+        AudioManager.Instance.Random_SoundPlay(gameObject,29,3);
         Set_AnimLayerWeight(1, 1);
         m_Agent.speed = 0f;
     }
@@ -131,7 +131,7 @@ public class Monster_Beetle : MonsterBase
     private void Enter_Attack()
     {
 
-        AudioManager.m_Instnace.Play(gameObject, "Bettle_Attack");
+        AudioManager.Instance.Play(gameObject, "Bettle_Attack");
     }
 
     private void Update_Attack()
@@ -161,7 +161,7 @@ public class Monster_Beetle : MonsterBase
         m_Agent.isStopped = true;
         m_Anim.SetBool("Sturn", true);
         m_SturnVfx.Play();
-        AudioManager.m_Instnace.Random_SoundOnShot(gameObject, 11,3);
+        AudioManager.Instance.Random_SoundOnShot(gameObject, 11,3);
         
         
     }

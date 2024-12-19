@@ -111,8 +111,8 @@ public class Monster_BettleQueen : MonsterBase
     private void Enter_Spawn()
     {
         m_ParticleRespawn.Play();
-        AudioManager.m_Instnace.Play(gameObject, "BettleQueen_Spawn");
-        AudioManager.m_Instnace.PlayOneShot(gameObject, "BettleQueen_Spawn_VO");
+        AudioManager.Instance.Play(gameObject, "BettleQueen_Spawn");
+        AudioManager.Instance.PlayOneShot(gameObject, "BettleQueen_Spawn_VO");
         Set_AnimLayerWeight(1, 0);
         StartCoroutine(Corutine_Spawn());
         
@@ -130,7 +130,7 @@ public class Monster_BettleQueen : MonsterBase
 
     private void Enter_Idle()
     {
-        AudioManager.m_Instnace.Random_SoundOnShot(gameObject, 119, 3);
+        AudioManager.Instance.Random_SoundOnShot(gameObject, 119, 3);
         Set_AnimLayerWeight(1, 1);
         m_Agent.speed = 0f;
     }

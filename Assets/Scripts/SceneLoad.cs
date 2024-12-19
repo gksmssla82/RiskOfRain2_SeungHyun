@@ -31,7 +31,7 @@ public class SceneLoad : MonoBehaviour
             float progress = Mathf.Clamp01(operation.progress / 0.9f);
 
             // 포토폴리오용으로 로딩 조금 시간걸리게 만듬
-            m_DelayProgress = Mathf.Lerp(m_DelayProgress, progress, Time.deltaTime * 0.5f); 
+            m_DelayProgress = Mathf.Lerp(m_DelayProgress, progress, Time.deltaTime * 3f); 
 
             int percentage = Mathf.RoundToInt(m_DelayProgress * 100);
 

@@ -74,7 +74,7 @@ public class ActionController : MonoBehaviour
                 m_Inventory.Acquire_Item(m_HitInfo.transform.GetComponent<ItemPickUp>().m_Item);
                 UI_ItemInfo();
                 Destroy(m_HitInfo.transform.gameObject);
-                AudioManager.m_Instnace.Random_SoundPlay(gameObject, 109, 4);
+                AudioManager.Instance.Random_SoundPlay(gameObject, 109, 4);
                 Info_Disappear();
             }
         }

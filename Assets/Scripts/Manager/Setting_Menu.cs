@@ -12,8 +12,7 @@ public class Setting_Menu : MonoBehaviour
         {
             if (gameObject.activeSelf == true)
             {
-                AudioManager.m_Instnace.Play(gameObject, "Button_Exit");
-                //PauseManager.m_Instance.PauseGame();
+                AudioManager.Instance.Play(gameObject, "Button_Exit");
                 gameObject.SetActive(false);
             }
 

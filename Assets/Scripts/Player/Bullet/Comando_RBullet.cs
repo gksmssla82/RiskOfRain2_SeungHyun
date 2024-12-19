@@ -9,6 +9,7 @@ public class Comando_RBullet : Bullet
 
     protected override void Update()
     {
+        TimeOut_BulletDeActive("Bullet_R");
         base.Update();
     }
 
@@ -40,7 +41,7 @@ public class Comando_RBullet : Bullet
                 }
 
                 // ÃÑ¾Ë »èÁ¦
-                Destroy_Bullet();
+                DeActivate_Bullet("Bullet_R");
 
 
             }
