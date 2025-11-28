@@ -178,21 +178,27 @@ classDiagram
 ### 6. Player Skill
 
 **스킬 구성**
-*   **기본 공격 (LMB)**: 기본 배율 100% 데미지.
-*   **보조 스킬 (RMB)**:
+*   **기본 공격 (LMB)**: 기본 배율 100% 데미지.  
+    ![](./Resources/Image/기본공격.gif)
+*   **보조 스킬 (RMB)**:  
+   ![](./Resources/Image/관통공격.gif)
     *   기본 배율 150%.
     *   **관통 시스템**: 몬스터 관통 시 데미지 20% 증가 (최대 6회, 최대 270%).
-*   **특수 스킬 (R)**:
+*   **특수 스킬 (R)**:  
+  ![](./Resources/Image/기절공격.gif)
     *   기본 배율 180% (3회 사격).
     *   **CC기**: 일반 몬스터 명중 시 3초 스턴.
 
 ### 7. Shader
 
 **구현 내용**
-*   **Laser Shader**:
+*   **Laser Shader**:  
+  ![](./Resources/Image/골램레이저.gif)
     *   Noise Mask를 사용하여 지직거리는 효과 구현.
     *   경고 레이저(흐림) vs 실제 레이저(선명함) 구분.
-*   **Environment Shader**:
+*   **Environment Shader**:  
+     ![](./Resources/Image/나무쉐이더.gif)
+![](./Resources/Image/잔디쉐이더.gif)
     *   플레이어와의 거리에 따라 나무, 잔디 등의 색상이 변화하는 효과 구현.
 
 ### 8. FSM & Sound System
