@@ -133,7 +133,7 @@ classDiagram
 **해결 방안**
 *   **Focus Point**: Aim 방향에 보이지 않는 빈 구체(FocusPoint)를 생성.
 *   **선형 보간 (Lerp)**: 마우스 입력에 따라 FocusPoint를 부드럽게 이동시키고, 캐릭터가 이를 바라보도록 설정.
-*   **Animation Blending**: Horizontal/Vertical 움직임을 2등분하여 Blend Tree로 구성, 카메라의 오일러 각도를 로컬 좌표로 변환(0~360 → -180~180)하여 적용.
+*   **Animation Blending**: Horizontal/Vertical 움직임을 2등분하여 Blend Tree로 구성, 카메라의 오일러 각도를 로컬 좌표로 변환
 
 🔗 [상세 기술 블로그 링크](https://enom01.tistory.com/116)
 
