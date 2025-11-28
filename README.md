@@ -220,10 +220,10 @@ classDiagram
 
 ---
 
-## 🛠 기술 스택
+## 기술 스택
 
 *   **Engine**: Unity 2020.3 LTS
 *   **Language**: C#
-*   **IDE**: Visual Studio 2019
+*   **IDE**: Visual Studio 2022
 *   **Version Control**: Git / GitHub
 *   **Tools**: Blender (리소스 수정), Photoshop (UI 리소스)
